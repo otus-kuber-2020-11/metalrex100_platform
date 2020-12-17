@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-reverse
+  labels:
+    app: payment-reverse
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: payment-reverse
+  template:
+    metadata:
+      labels:
+        app: payment-reverse
+    spec:
+      containers:
+        - name: payment-reverse
+          image: metalrex100/study-kubernetes:microservices-payment-v0.0.1
+          imagePullPolicy: Always
