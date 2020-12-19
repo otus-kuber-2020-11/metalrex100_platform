@@ -17,4 +17,3 @@ spec:
       containers:
         - name: payment
           image: metalrex100/study-kubernetes:microservices-payment-v0.0.2
-          imagePullPolicy: Always
