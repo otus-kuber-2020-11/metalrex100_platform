@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-bg
+  labels:
+    app: payment-bg
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 100%
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: payment-bg
+  template:
+    metadata:
+      labels:
+        app: payment-bg
+    spec:
+      containers:
+        - name: payment-bg
+          image: metalrex100/study-kubernetes:microservices-payment-v0.0.1
+          imagePullPolicy: Always
