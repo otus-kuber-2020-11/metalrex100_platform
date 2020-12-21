@@ -8,6 +8,6 @@ subjects:
     kind: Group
     name: system:serviceaccounts:prometheus
 roleRef:
-  kind: ClusterRole
+  kind: Role
   name: pods-get-list-watch
   apiGroup: rbac.authorization.k8s.io
