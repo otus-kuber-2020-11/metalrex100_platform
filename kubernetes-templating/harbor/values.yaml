@@ -1,0 +1,8 @@
+expose:
+  tls:
+    secretName: "tls-secret"
+  ingress:
+    hosts:
+      core: harbor.34.71.5.179.nip.io
+      notary: notary.34.71.5.179.nip.io
+  externalURL: https://harbor.34.71.5.179.nip.io
